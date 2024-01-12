@@ -10,11 +10,10 @@ use Classes\Quiz;
 use Classes\QuestionType;
 use Classes\Types\Question;
 
-$data = new ExtractJson('json/model.json');
+$data = new ExtractJson('./static/json/model.json');
 $questions = new CreateQuestions($data->getData());
 $questions->createQuestions();
-
-$quiz = new Quiz($questions->getQuestions());
-
+$quiz = new Quiz($questions->getQuestions(), 'Quiz de fifou');
+echo $quiz->head();
 echo $quiz->display();
 ?>

@@ -12,12 +12,13 @@ class Radio extends QuestionType {
     }
 
     public function display(): string {
-        $html = '<form method="POST" action="quiz.php">';
-        $html .= '<div class="form-group">';
+        $html = '<form method="POST" action="quiz.php" class="bloc_radio">';
+        $html .= '<div class="radio">';
         $html .= '<label for="question' . $this->getLabel() . '">' . $this->getLabel() . '</label><br>';
         foreach ($this->getChoices() as $choice) {
+            $html.= '<p>'. $choice .'<p>';
             $html .= '<input type="radio" name="question id=' . $this->getUuid() . '"
-            value="' . $choice . '">' . $choice . '<br>';
+            value="' . $choice . '">' . '<br>';
         }
         $html .= '</div>';
         return $html;
