@@ -4,11 +4,13 @@ namespace Classes\Types;
 
 class Correction{
 
-    protected $questions = [];
-    protected $answers = [];
-    public function __construct(array $questions, array $answers) {
+    protected $questions;
+    protected $answers;
+    protected $score;
+    public function __construct(array $questions, array $answers, int $score) {
         $this->questions = $questions;
         $this->answers = $answers;
+        $this->score = $score;
     }
 
     public function display(): string {
@@ -25,6 +27,7 @@ class Correction{
             }
             $html .= "</div>";
         }
+        $html .= "<p>Votre score : {$this->score}/".count($this->questions)."</p>";
         return $html;
     }
 }
