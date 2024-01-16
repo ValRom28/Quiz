@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Classes\Check;
 
 use Classes\Quiz;
+use Classes\Types\Radio;
 
 class CheckAnswer {
     protected $quiz;
@@ -34,13 +35,14 @@ class CheckAnswer {
         }
     }
 
-    public function checkRadio(Question $question): void {
+    public function checkRadio(Radio $question): void {
         $answer = $question->getAnswer();
-        $userAnswer = $_POST[$question->getUuid()];
+        $userAnswerKey = 'question_id=' . $question->getUuid();
+        $userAnswer = isset($_POST[$userAnswerKey]) ? $_POST[$userAnswerKey] : null;
         if ($answer === $userAnswer) {
-            $this->score++;
+            $this->getQuiz()->incrScore();
         }
-        $this->total++;
+        $this->getQuiz()->incrTotal();
     }
 }
 

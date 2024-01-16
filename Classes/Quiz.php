@@ -32,6 +32,14 @@ class Quiz {
         $this->total = $total;
     }
 
+    public function incrScore(): void {
+        $this->score++;
+    }
+
+    public function incrTotal(): void {
+        $this->total++;
+    }
+
     public function display(): string {
         $html = "<form action='index.php' method='post'>";
         foreach ($this->questions as $question) {
