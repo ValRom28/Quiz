@@ -1,0 +1,48 @@
+h1{
+    color: red;
+    text-align: center;
+    font-size: 300%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.question{
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+label{
+    font-size: 150%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+    
+input[type="submit"]{
+    background-color: white;
+    color: rgb(94, 94, 224);
+    font-size: 150%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 24%;
+    text-align: center;
+    flex-basis: 51%;
+}
+
+input[type="submit"]:hover{
+    background-color: rgb(94, 94, 224);
+    color: white;
+}
+
+.bloc_radio{
+    text-align: center;
+    flex-basis: 100%;
+}
+.radio{
+    background-color: rgb(94, 94, 224);
+    text-align: center;
+    margin: 1rem;
+    flex-basis: 51%;
+
+}
+.radio>p{
+    color: white;
+}
+
