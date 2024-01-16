@@ -47,6 +47,14 @@ class Quiz {
         return $html;
     }
 
+    public function incrScore(): void {
+        $this->score++;
+    }
+
+    public function incrTotal(): void {
+        $this->total++;
+    }
+
     public function display(): string {
         $html = "<body>";
         $html .= "<h1>".$this->nom."</h1>";
