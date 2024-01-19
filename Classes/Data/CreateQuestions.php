@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace Classes\Data;
 
 use Classes\Types\Radio;
+use Classes\Types\Checkbox;
+use Classes\Types\Text;
 
 class CreateQuestions {
     protected $data;
