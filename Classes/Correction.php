@@ -1,8 +1,6 @@
 <?php
 
-namespace Classes\Types;
-
-class Correction{
+class Correction {
 
     protected $questions;
     protected $answers;
@@ -15,19 +13,23 @@ class Correction{
 
     public function display(): string {
         $html = "<h1>Correction</h1>";
+        $cpt = 0;
         foreach ($this->questions as $question) {
-            $html .= "<div class='question'>";
-            $html .= "<h2>Question {$question->getId()}</h2>";
+            $cpt++;
+            $html .= "<section class='reponses'>";
+            $html .= "<div class='bloc_reponse'>";
+            $html .= "<h2>Question {$cpt}</h2>";
             $html .= "<p>Votre réponse : {$this->answers[$question->getId()]}</p>";
-            $html .= "<p>La bonne réponse était : {$question->getAnswer()}</p>";
             if ($question->getAnswer() == $this->answers[$question->getId()]) {
                 $html .= "<p class='correct'>Bonne réponse</p>";
             } else {
                 $html .= "<p class='incorrect'>Mauvaise réponse</p>";
             }
+            $html .= "<p>La bonne réponse était : {$question->getAnswer()}</p>";
             $html .= "</div>";
+            $html .= "</section>";
         }
-        $html .= "<p>Votre score : {$this->score}/".count($this->questions)."</p>";
+        $html .= "<p class='score'>Votre score : {$this->score}/".count($this->questions)."</p>";
         return $html;
     }
 }

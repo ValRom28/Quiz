@@ -4,22 +4,28 @@ declare(strict_types=1);
 require_once 'Classes/autoloader.php';
 Autoloader::register();
 
-use Classes\Data\ExtractJson;
-use Classes\Data\CreateQuestions;
-use Classes\Quiz;
-use Classes\QuestionType;
-use Classes\Check\CheckAnswer;
+use Data\ExtractJson;
+use Data\CreateQuestions;
+use Check\CheckAnswer;
 
 $data = new ExtractJson('./static/json/model.json');
 $questions = new CreateQuestions($data->getData());
 $questions->createQuestions();
-$quiz = new Quiz($questions->getQuestions(), 'Quiz de fifou');
+$arrayQuestions = $questions->getQuestions();
+$quiz = new Quiz($questions->getQuestions(), 'Quiz Radio');
 echo $quiz->head();
 
 $checkAnswer = new CheckAnswer($quiz);
 $checkAnswer->check();
+$userAnswers = $checkAnswer->getUserAnswers();
 $score = $quiz->getScore() . '/' . $quiz->getTotal();
 
-echo $quiz->display();
-echo "<p>Score : $score</p>";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $correction = new Correction($arrayQuestions, $userAnswers, (int) $score);
+
+    // Affichez la page de correction
+    echo $correction->display();
+} else {
+    echo $quiz->display();
+}
 ?>

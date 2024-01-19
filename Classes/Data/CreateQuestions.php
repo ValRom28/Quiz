@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Classes\Data;
+namespace Data;
 
-use Classes\Types\Radio;
-use Classes\Types\Checkbox;
-use Classes\Types\Text;
+use Types\Radio;
+use Types\Checkbox;
+use Type\Text;
 
 class CreateQuestions {
     protected $data;

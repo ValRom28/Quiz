@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Classes\Check;
+namespace Check;
 
-use Classes\Quiz;
-use Classes\Types\Radio;
-use Classes\Types\Checkbox;
-use Classes\Types\Text;
+use Quiz;
+use Types\Radio;
+use Types\Checkbox;
+use Types\Text;
 
 class CheckAnswer {
     protected $quiz;
@@ -23,6 +23,15 @@ class CheckAnswer {
 
     public function getQuestions(): array {
         return $this->questions;
+    }
+
+    public function getUserAnswers(): array {
+        $userAnswers = [];
+        foreach ($this->getQuiz()->getQuestions() as $question) {
+            $userAnswerKey = 'question_id=' . $question->getUuid();
+            $userAnswers[$question->getUuid()] = $_POST[$userAnswerKey] ?? null;
+        }
+        return $userAnswers;
     }
 
     public function check(): void {

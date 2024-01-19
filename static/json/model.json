@@ -2,25 +2,27 @@
     {
         "uuid": "8030a37e-947b-11ee-b9d1-0242ac120002",
         "type": "radio",
-        "label": "Le label de la question 1.",
+        "label": "Quelle est la couleur du cheval blanc d'Henri IV ?",
         "choices": [
-            "Answer 1",
-            "Answer 2",
-            "Answer 3"
+            "Noir",
+            "Blanc",
+            "Gris"
         ],
-        "correct": "Answer 2"
+        "correct": "Blanc"
     },
     {
         "uuid": "8d7f7078-947b-11ee-b9d1-0242ac120002",
         "type": "radio",
-        "label": "Le label de la question 2.",
+        "label": "Quel est le numéro du département de la Corse du Sud ?",
         "choices": [
-            "Answer 1",
-            "Answer 2",
-            "Answer 3"
+            "2C",
+            "2A",
+            "2B"
         ],
-        "correct": "Answer 3"
+
+        "correct": "2A"
     },
+
     {
         "uuid": "8d7f7078-947b-11ee-b9d1-0242ac120002",
         "type": "checkbox",
