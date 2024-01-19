@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Classes\Types;
+namespace Types;
 
-use Classes\QuestionType;
+use Question;
 
-class Text extends QuestionType {
+class Text extends Question {
     public function __construct(string $uuid, string $type,
     string $label, array $choices, string $answer) {
         parent::__construct($uuid, $type, $label, $choices, $answer);
