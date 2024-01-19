@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Classes\Data;
+namespace Data;
 
 class ExtractJson {
     protected $fileName;

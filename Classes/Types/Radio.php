@@ -1,14 +1,18 @@
 <?php
 declare(strict_types=1);
 
-namespace Classes\Types;
+namespace Types;
 
-use Classes\QuestionType;
+use Question;
 
-class Radio extends QuestionType {
+class Radio extends Question {
     public function __construct(string $uuid, string $type,
     string $label, array $choices, string $answer) {
         parent::__construct($uuid, $type, $label, $choices, $answer);
+    }
+
+    public function getId(): string {
+        return $this->uuid;
     }
 
     public function display(): string {

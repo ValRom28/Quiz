@@ -1,12 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Classes;
-
 /**
- * Classe QuestionType
+ * Classe Question
  */
-abstract class QuestionType {
+abstract class Question {
     protected $uuid;
     protected $type;
     protected $label;

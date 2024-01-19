@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Classes\Data;
+namespace Data;
 
-use Classes\Types\Radio;
+use Types\Radio;
 
 class CreateQuestions {
     protected $data;
