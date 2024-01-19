@@ -5,6 +5,8 @@ namespace Classes\Check;
 
 use Classes\Quiz;
 use Classes\Types\Radio;
+use Classes\Types\Checkbox;
+use Classes\Types\Text;
 
 class CheckAnswer {
     protected $quiz;
@@ -44,6 +46,25 @@ class CheckAnswer {
         }
         $this->getQuiz()->incrTotal();
     }
+
+    public function checkCheckbox(Checkbox $question): void {
+        foreach ($question->getAnswer() as $answer) {
+            $userAnswerKey = 'question_id=' . $question->getUuid();
+            $userAnswer = isset($_POST[$userAnswerKey]) ? $_POST[$userAnswerKey] : null;
+            if ($answer === $userAnswer) {
+                $this->getQuiz()->incrScore();
+            }
+            $this->getQuiz()->incrTotal();
+        }
+    }
+
+    public function checkText(Text $question): void {
+        $this->getQuiz()->incrTotal();
+        // Code pour la vérification des questions de type "text"
+    }
 }
+        
+    
+
 
 ?>

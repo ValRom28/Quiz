@@ -38,18 +38,18 @@ input[type="submit"]:hover{
     color: white;
 }
 
-.bloc_radio{
+.bloc_radio,.bloc_CheckBox,.bloc_text{
     text-align: center;
     flex-basis: 100%;
 }
-.radio{
+.radio,.checkbox,.text{
     background-color: rgb(94, 94, 224);
     text-align: center;
     margin: 1rem;
     flex-basis: 51%;
 
 }
-.radio>p{
+.radio>p,.checkbox>p,.text>p{
     color: white;
 }
 
