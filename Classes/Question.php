@@ -14,13 +14,12 @@ abstract class Question {
     /**
      * Constructeur de la classe QuestionType
      * @param string l'identifiant unique de la question
-     * @param string la question posée
      * @param string le type de question
+     * @param string la question posée
      * @param array les choix possibles
-     * @param string la bonne réponse
+     * @param string|array la réponse
      */
-    public function __construct(string $uuid, string $type,
-    string $label, array $choices, string $answer) {
+    public function __construct(string $uuid, string $type, string $label, array $choices, string|array $answer) {
         $this->uuid = $uuid;
         $this->type = $type;
         $this->label = $label;
@@ -54,9 +53,9 @@ abstract class Question {
     }
 
     /**
-     * Retourne la bonne réponse
+     * Retourne la réponse
      */
-    public function getAnswer(): string {
+    public function getAnswer() {
         return $this->answer;
     }
 
@@ -82,9 +81,9 @@ abstract class Question {
     }
 
     /**
-     * Modifie la bonne réponse
+     * Modifie la réponse
      */
-    public function setAnswer(string $answer): void {
+    public function setAnswer($answer): void {
         $this->answer = $answer;
     }
 }
