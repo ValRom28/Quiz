@@ -14,18 +14,16 @@ h1{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.question{
+.question, .score, .reponses {
     text-align: center;
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.reponses {
-    text-align: center;
-    margin-top: 2rem;
-    display: flex;
-    flex-wrap: wrap;
+.score {
+    font-size: 2rem;
 }
 
 .bloc_reponse {
@@ -33,6 +31,14 @@ h1{
     margin: 1rem;
     flex-basis: 51%;
     border-radius: 2%;
+}
+
+.correct {
+    color : green;
+}
+
+.incorrect {
+    color : red;
 }
 
 .bloc_reponse > p, h2 {

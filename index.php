@@ -12,7 +12,7 @@ $data = new ExtractJson('./static/json/model.json');
 $questions = new CreateQuestions($data->getData());
 $questions->createQuestions();
 $arrayQuestions = $questions->getQuestions();
-$quiz = new Quiz($questions->getQuestions(), 'Quiz de fifou');
+$quiz = new Quiz($questions->getQuestions(), 'Quiz Radio');
 echo $quiz->head();
 
 $checkAnswer = new CheckAnswer($quiz);
