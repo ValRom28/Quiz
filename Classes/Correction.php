@@ -19,13 +19,23 @@ class Correction {
             $html .= "<section class='reponses'>";
             $html .= "<div class='bloc_reponse'>";
             $html .= "<h2>Question {$cpt}</h2>";
-            $html .= "<p>Votre réponse : {$this->answers[$question->getId()]}</p>";
-            if ($question->getAnswer() == $this->answers[$question->getId()]) {
+            $userAnswer = is_array($this->answers[$question->getUuid()]) 
+                ? implode(", ", $this->answers[$question->getUuid()]) 
+                : $this->answers[$question->getUuid()];
+
+            $html .= "<p>Votre réponse : {$userAnswer}</p>";
+
+            if ($question->getAnswer() == $this->answers[$question->getUuid()]) {
                 $html .= "<p class='correct'>Bonne réponse</p>";
             } else {
                 $html .= "<p class='incorrect'>Mauvaise réponse</p>";
             }
-            $html .= "<p>La bonne réponse était : {$question->getAnswer()}</p>";
+            
+            $correctAnswer = is_array($question->getAnswer()) 
+                ? implode(", ", $question->getAnswer()) 
+                : $question->getAnswer();
+
+            $html .= "<p>La bonne réponse était : {$correctAnswer}</p>";
             $html .= "</div>";
             $html .= "</section>";
         }

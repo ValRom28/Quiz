@@ -5,7 +5,7 @@ namespace Data;
 
 use Types\Radio;
 use Types\Checkbox;
-use Type\Text;
+use Types\Text;
 
 class CreateQuestions {
     protected $data;

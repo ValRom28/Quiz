@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Classes\Types;
+namespace Types;
 
-use Classes\QuestionType;
+use Question;
 
-class Checkbox extends QuestionType {
+class Checkbox extends Question {
     public function __construct(string $uuid, string $type,
     string $label, array $choices, array $answer) {
         parent::__construct($uuid, $type, $label, $choices, $answer);

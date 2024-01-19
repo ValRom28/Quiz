@@ -11,10 +11,6 @@ class Radio extends Question {
         parent::__construct($uuid, $type, $label, $choices, $answer);
     }
 
-    public function getId(): string {
-        return $this->uuid;
-    }
-
     public function display(): string {
         $html = '<form method="POST" action="quiz.php" class="bloc_radio">';
         $html .= '<div class="radio">';
